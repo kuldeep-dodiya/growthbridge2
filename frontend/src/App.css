@@ -1,0 +1,130 @@
+/* Growth Bridge - Custom App Styles */
+/* NOTE: Common styles (container-custom, markdown-content, whatsapp-pulse, 
+   ::selection, :focus-visible, section-padding) are in index.css. 
+   This file contains ONLY app-specific overrides. */
+
+.App {
+  min-height: 100vh;
+  background-color: #050505;
+}
+
+/* Hero Section Background */
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+}
+
+/* Service card animations */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+}
+
+/* Process step connector */
+.process-connector {
+  position: relative;
+}
+
+.process-connector::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .process-connector::after {
+    display: none;
+  }
+}
+
+/* Stats counter animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-item {
+  animation: countUp 0.6s ease-out forwards;
+}
+
+/* Blog card hover */
+.blog-card {
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+}
+
+.blog-card:hover .blog-image {
+  transform: scale(1.05);
+}
+
+.blog-image {
+  transition: transform 0.3s ease;
+}
+
+/* CTA Section gradient */
+.cta-gradient {
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #EC4899 100%);
+}
+
+/* Form focus states */
+.form-input:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Navigation dropdown */
+.nav-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* Calendly modal override */
+.calendly-overlay {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Infinite scroll carousel */
+.logo-carousel {
+  display: flex;
+  animation: scroll 30s linear infinite;
+}
+
+.logo-carousel:hover {
+  animation-play-state: paused;
+}

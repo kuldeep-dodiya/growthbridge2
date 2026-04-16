@@ -1,0 +1,81 @@
+{
+  "project_name": "Growth Bridge",
+  "theme": "dark",
+  "archetype": "7 (Electric & Neon) paired with 4 (Swiss Brutalist typography) - 'Elite Tech / Performance Gen-Z'",
+  "colors": {
+    "background_base": "#050505",
+    "background_surface": "#0A0A0C",
+    "background_elevated": "#111115",
+    "primary_accent": "#3B82F6",
+    "secondary_accent": "#8B5CF6",
+    "whatsapp_accent": "#25D366",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A1A1AA",
+    "border_subtle": "rgba(255, 255, 255, 0.08)",
+    "border_focus": "rgba(59, 130, 246, 0.5)",
+    "glass_bg": "rgba(10, 10, 12, 0.6)"
+  },
+  "typography": {
+    "headings": "Cabinet Grotesk",
+    "body": "Outfit",
+    "mono": "JetBrains Mono",
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter font-black",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight font-bold",
+      "h3": "text-xl sm:text-2xl font-semibold",
+      "body": "text-base leading-relaxed text-zinc-400",
+      "overline": "text-xs uppercase tracking-[0.2em] font-mono text-blue-400"
+    }
+  },
+  "spacing_and_layout": {
+    "container_padding": "p-6 md:p-12",
+    "section_gap": "gap-20 md:gap-32",
+    "grid_strategy": "Bento Grid Mode A (Tetris) for services. Use wide gaps (gap-8) and asymmetrical column spans.",
+    "border_radius": "rounded-2xl"
+  },
+  "surface_strategies": {
+    "cards": "Flat background (#0A0A0C), 1px solid border (rgba(255,255,255,0.08)), hover state triggers a subtle neon glow (shadow-[0_0_15px_rgba(59,130,246,0.15)]) and translates up (-translate-y-1).",
+    "header": "Crystal Glass: backdrop-blur-xl bg-black/60, 1px bottom border (rgba(255,255,255,0.05)). Must use z-50.",
+    "buttons": "Primary (WhatsApp): Solid White bg, black text, hover:bg-gray-200. Secondary: Transparent bg, 1px border border-white/20, hover:bg-white/10."
+  },
+  "media": {
+    "hero_background": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/8c4132bc-810e-4df6-9699-cde94efb21c2/images/2e935c0205ec77d47ab1ece18419a157c8c8ad597e8ce92dae893a5d3c03512c.png",
+      "description": "Abstract 3D fluid mesh, deep void black with subtle neon blue and deep purple glowing edges."
+    },
+    "founder_portrait": {
+      "url": "https://images.unsplash.com/photo-1771894431313-6d442f2a50a1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdCUyMG1hbiUyMGJsYWNrJTIwc2hpcnQlMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NzU0Nzk5MTh8MA&ixlib=rb-4.1.0&q=85",
+      "description": "A young male founder in a dark setting, premium and aggressive vibe."
+    },
+    "service_ai_automation": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/8c4132bc-810e-4df6-9699-cde94efb21c2/images/0c8153f4589992217e524d7025546e230c9c13ca6b2df216e50ce1a0ea6f2d30.png",
+      "description": "Sleek metallic processor chip with glowing neon blue circuitry."
+    },
+    "service_meta_ads": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/8c4132bc-810e-4df6-9699-cde94efb21c2/images/4d3a8f16541c17c8c1e65f59dc567421c582060c218ef0817f2a65df5bd08a8d.png",
+      "description": "Abstract holographic rising chart in dark room with purple/blue glow."
+    },
+    "case_study_real_estate": {
+      "url": "https://images.unsplash.com/photo-1770914627852-17ab3a4c8c1b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwyfHxyZWFsJTIwZXN0YXRlJTIwYnVpbGRpbmclMjBuaWdodHxlbnwwfHx8fDE3NzU0Nzk5MTh8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Modern illuminated buildings at dusk."
+    },
+    "case_study_restaurant": {
+      "url": "https://images.pexels.com/photos/36075599/pexels-photo-36075599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Cozy atmospheric outdoor dining area at night."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Use pure HTML and Tailwind for marketing layouts (Home, Services, Case Studies). Do not use Shadcn 'Card' components for the bento grids to maintain maximum flexibility. Build them with pure divs.",
+    "Use Shadcn UI for the Contact Form (Input, Textarea), Navigation Menu (Dropdown for Services), and Dialog/Modal for the Calendly integration.",
+    "Implement the infinite auto-scrolling logo carousel using 'framer-motion'. For the 'premium brand-style logos', use large abstract Lucide-React icons (e.g., Triangle, Hexagon, Command, Cpu, Layers) styled with 'text-zinc-600' that turn 'text-white' on hover to simulate high-end partner brands. Do not use generic image placeholders with text.",
+    "Ensure the hero background image has a dark gradient overlay (bg-black/60 to bg-black/80) so the bold white text is highly readable.",
+    "Implement a global floating WhatsApp button in the bottom right corner (color: #25D366). Use phone number '+91 93130 70872'. Ensure it has a subtle pulse animation.",
+    "All buttons and links MUST have explicit hover states (e.g., hover:bg-white/10 hover:text-white). Focus states must have high contrast rings.",
+    "All interactive elements MUST include a 'data-testid' attribute (e.g., data-testid='whatsapp-cta-button', data-testid='contact-form-submit', data-testid='hero-book-call-button', data-testid='floating-whatsapp-button').",
+    "Routing must include individual service pages. Create the 6 dedicated service pages as required by the spec: Meta Ads, AI Automation, AI Creative Production, Funnel/Landing Pages, Influencer Marketing, Growth Consulting.",
+    "For the Blog, set up a simple `react-markdown` implementation that renders content from static `.md` files or predefined constants. It must be SEO friendly.",
+    "For the Calendly integration, create a button that opens a Shadcn Dialog containing a mocked Calendly booking UI or an iframe to a real Calendly link.",
+    "Use 'lucide-react' for all iconography.",
+    "For Typography, install and use 'Cabinet Grotesk' for headings and 'Outfit' for body text via fontsource or Google Fonts."
+  ]
+}
