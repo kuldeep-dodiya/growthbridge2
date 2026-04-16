@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://growthbriidge.in/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+
+  <!-- Main Pages -->
+  <url><loc>https://growthbriidge.in/</loc></url>
+  <url><loc>https://growthbriidge.in/about</loc></url>
+  <url><loc>https://growthbriidge.in/services</loc></url>
+  <url><loc>https://growthbriidge.in/case-studies</loc></url>
+  <url><loc>https://growthbriidge.in/blog</loc></url>
+  <url><loc>https://growthbriidge.in/contact</loc></url>
+
+  <!-- Service Pages -->
+  <url><loc>https://growthbriidge.in/services/meta-ads</loc></url>
+  <url><loc>https://growthbriidge.in/services/ai-automation</loc></url>
+  <url><loc>https://growthbriidge.in/services/ai-creative-production</loc></url>
+  <url><loc>https://growthbriidge.in/services/funnel-landing-pages</loc></url>
+  <url><loc>https://growthbriidge.in/services/influencer-marketing</loc></url>
+  <url><loc>https://growthbriidge.in/services/growth-consulting</loc></url>
+
 </urlset>
