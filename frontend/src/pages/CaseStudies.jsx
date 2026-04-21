@@ -3,7 +3,7 @@ import useDocumentTitle from '@/hooks/use-document-title';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Building2, UtensilsCrossed, Package } from 'lucide-react';
-import axios from 'axios';
+
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -50,28 +50,11 @@ export default function CaseStudies() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const fetchCaseStudies = async () => {
-    setLoading(true);
-    setError(false);
-    try {
-      const response = await axios.get(`${API}/case-studies`);
-      setCaseStudies(
-        Array.isArray(response.data) ? response.data : response.data.data || [],
-      );
-    } catch (err) {
-      console.error('Error fetching case studies:', err);
-      // Fallback to static data as requested when API is not available
-      setCaseStudies(staticCaseStudies);
-      // Notice: Not setting error to true here, because we want the UI
-      // to gracefully display the static mock data without breaking.
-    } finally {
-      setLoading(false);
-    }
-  };
+ useEffect(() => {
+   setCaseStudies(staticCaseStudies);
+   setLoading(false);
+ }, []);
 
-  useEffect(() => {
-    fetchCaseStudies();
-  }, []);
 
   return (
     <div className="pt-20" data-testid="case-studies-page">
