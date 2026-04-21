@@ -3,7 +3,6 @@ import useDocumentTitle from '@/hooks/use-document-title';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, TrendingUp, CheckCircle, MessageCircle, Calendar } from 'lucide-react';
-import axios from 'axios';
 import CalendlyModal from '@/components/shared/CalendlyModal';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -64,29 +63,11 @@ export default function CaseStudyDetail() {
   const [showCalendly, setShowCalendly] = useState(false);
   useDocumentTitle(caseStudy ? `${caseStudy.title} — Case Study` : 'Loading...');
 
-  useEffect(() => {
-    const fetchCaseStudy = async () => {
-      try {
-        const response = await axios.get(`${API}/case-studies/${slug}`);
-        if (response.data) {
-          setCaseStudy(response.data);
-        } else {
-          throw new Error("Empty API Response");
-        }
-      } catch (error) {
-        console.error('Error fetching case study:', error);
-        // Fallback to perfectly matching static mock data
-        const study = staticCaseStudies.find(item => item.slug === slug);
-        if (study) {
-          setCaseStudy(study);
-        }
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCaseStudy();
-  }, [slug]);
+useEffect(() => {
+  const study = staticCaseStudies.find((item) => item.slug === slug);
+  setCaseStudy(study || null);
+  setLoading(false);
+}, [slug]);
 
   if (loading) {
     return (
