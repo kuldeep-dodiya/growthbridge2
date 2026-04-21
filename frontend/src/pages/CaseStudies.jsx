@@ -55,7 +55,9 @@ export default function CaseStudies() {
     setError(false);
     try {
       const response = await axios.get(`${API}/case-studies`);
-      setCaseStudies(response.data);
+      setCaseStudies(
+        Array.isArray(response.data) ? response.data : response.data.data || [],
+      );
     } catch (err) {
       console.error('Error fetching case studies:', err);
       // Fallback to static data as requested when API is not available
